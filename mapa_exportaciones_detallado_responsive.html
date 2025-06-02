@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}
+        body, html { height: 100%; margin: 0; padding: 0; }
+        #map { width: 100%; height: 100vh; }
+        @media (max-width: 768px) {
+            #map { height: 80vh; }
+        }
+    </style>
+<style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" rel="stylesheet"/>
+<meta content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<style>
+                #map_47ea62995ea47704b9fcebf9cc549c3e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+</head>
+<body>
+<div class="folium-map" id="map_47ea62995ea47704b9fcebf9cc549c3e"></div>
+</body>
+<script>
+    
+    
+            var map_47ea62995ea47704b9fcebf9cc549c3e = L.map(
+                "map_47ea62995ea47704b9fcebf9cc549c3e",
+                {
+                    center: [4.5, -74.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cbf0e2673301def06cf135dd82929522 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var tile_layer_69fa452121d9ef7c94c3acbb24e4c154 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var tile_layer_fa799c49d7f463e250c366e9a9669ea3 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var feature_group_85677a2497466b32c5f2a8cfbb17cfbe = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_269c3282528bc0f7a654168532251041 = L.marker(
+                [5.75, -73.4],
+                {}
+            ).addTo(feature_group_85677a2497466b32c5f2a8cfbb17cfbe);
+        
+    
+            var icon_55191739fbd7ecffe030997715dc3121 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_269c3282528bc0f7a654168532251041.setIcon(icon_55191739fbd7ecffe030997715dc3121);
+        
+    
+        var popup_0315b8d60ed3ad5c5d562beb78294fbf = L.popup({"maxWidth": 250});
+
+        
+            var html_838a7ca20f5262a376b0258e53a96fd8 = $(`<div id="html_838a7ca20f5262a376b0258e53a96fd8" style="width: 100.0%; height: 100.0%;"><b>Esmeraldas</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_0315b8d60ed3ad5c5d562beb78294fbf.setContent(html_838a7ca20f5262a376b0258e53a96fd8);
+        
+
+        marker_269c3282528bc0f7a654168532251041.bindPopup(popup_0315b8d60ed3ad5c5d562beb78294fbf)
+        ;
+
+        
+    
+    
+            var feature_group_a68773b7fa79592d75dba244846b96ef = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_68d242a568b7844578d8d28bfe0c9a8b = L.marker(
+                [6.25, -75.56],
+                {}
+            ).addTo(feature_group_a68773b7fa79592d75dba244846b96ef);
+        
+    
+            var icon_b10db605dc374d6272925b04e4d9d126 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_68d242a568b7844578d8d28bfe0c9a8b.setIcon(icon_b10db605dc374d6272925b04e4d9d126);
+        
+    
+        var popup_c1e908c4925ba9294d1c3dfcaca7c3c9 = L.popup({"maxWidth": 250});
+
+        
+            var html_5070f64b146861287f46c03a2ed41d8a = $(`<div id="html_5070f64b146861287f46c03a2ed41d8a" style="width: 100.0%; height: 100.0%;"><b>Oro</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_c1e908c4925ba9294d1c3dfcaca7c3c9.setContent(html_5070f64b146861287f46c03a2ed41d8a);
+        
+
+        marker_68d242a568b7844578d8d28bfe0c9a8b.bindPopup(popup_c1e908c4925ba9294d1c3dfcaca7c3c9)
+        ;
+
+        
+    
+    
+            var marker_89b8d4252c9ebbdcc1f85d42e222bc0b = L.marker(
+                [5.7, -76.65],
+                {}
+            ).addTo(feature_group_a68773b7fa79592d75dba244846b96ef);
+        
+    
+            var icon_3ae984ad9fcc1d4c4228dfe369da29ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_89b8d4252c9ebbdcc1f85d42e222bc0b.setIcon(icon_3ae984ad9fcc1d4c4228dfe369da29ca);
+        
+    
+        var popup_32cacc86ccbce84279641e0403789e44 = L.popup({"maxWidth": 250});
+
+        
+            var html_6b7666b31aa7a964efbbbc867fdd9445 = $(`<div id="html_6b7666b31aa7a964efbbbc867fdd9445" style="width: 100.0%; height: 100.0%;"><b>Oro</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_32cacc86ccbce84279641e0403789e44.setContent(html_6b7666b31aa7a964efbbbc867fdd9445);
+        
+
+        marker_89b8d4252c9ebbdcc1f85d42e222bc0b.bindPopup(popup_32cacc86ccbce84279641e0403789e44)
+        ;
+
+        
+    
+    
+            var marker_ae8781d2f5efb2d6fe8a61099d36ce96 = L.marker(
+                [1.2, -77.3],
+                {}
+            ).addTo(feature_group_a68773b7fa79592d75dba244846b96ef);
+        
+    
+            var icon_f7cc4e988aa62e1b150789c239fcfcf4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_ae8781d2f5efb2d6fe8a61099d36ce96.setIcon(icon_f7cc4e988aa62e1b150789c239fcfcf4);
+        
+    
+        var popup_1ecf45882aa8c1e659b68ef8051eb042 = L.popup({"maxWidth": 250});
+
+        
+            var html_966420725824a321a9378b7b92f8e472 = $(`<div id="html_966420725824a321a9378b7b92f8e472" style="width: 100.0%; height: 100.0%;"><b>Oro</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_1ecf45882aa8c1e659b68ef8051eb042.setContent(html_966420725824a321a9378b7b92f8e472);
+        
+
+        marker_ae8781d2f5efb2d6fe8a61099d36ce96.bindPopup(popup_1ecf45882aa8c1e659b68ef8051eb042)
+        ;
+
+        
+    
+    
+            var feature_group_af316446f3de6ecaaf54347449974901 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_a6c088dabb57aa68992eb2baf0ad3985 = L.marker(
+                [4.6, -74.1],
+                {}
+            ).addTo(feature_group_af316446f3de6ecaaf54347449974901);
+        
+    
+            var icon_c979bb4f4a34537028dfa53136ace38a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_a6c088dabb57aa68992eb2baf0ad3985.setIcon(icon_c979bb4f4a34537028dfa53136ace38a);
+        
+    
+        var popup_bfcc933710a7b8de05c78c3b62771b7f = L.popup({"maxWidth": 250});
+
+        
+            var html_4b3f78c336503d9ae370e04f7dbcfd01 = $(`<div id="html_4b3f78c336503d9ae370e04f7dbcfd01" style="width: 100.0%; height: 100.0%;"><b>Plata</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_bfcc933710a7b8de05c78c3b62771b7f.setContent(html_4b3f78c336503d9ae370e04f7dbcfd01);
+        
+
+        marker_a6c088dabb57aa68992eb2baf0ad3985.bindPopup(popup_bfcc933710a7b8de05c78c3b62771b7f)
+        ;
+
+        
+    
+    
+            var feature_group_fa2271de9a06a60aa527ac85ee6baba0 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_c1997904d80f2fa95b75834e94519fe7 = L.marker(
+                [5.02, -74.0],
+                {}
+            ).addTo(feature_group_fa2271de9a06a60aa527ac85ee6baba0);
+        
+    
+            var icon_2349963071ca8cb453556ccf42ad8b6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_c1997904d80f2fa95b75834e94519fe7.setIcon(icon_2349963071ca8cb453556ccf42ad8b6e);
+        
+    
+        var popup_701c6952c8bd1469748c05dc6f93fa6f = L.popup({"maxWidth": 250});
+
+        
+            var html_3aa91910000d6db61a5cbddb0ce7ac9e = $(`<div id="html_3aa91910000d6db61a5cbddb0ce7ac9e" style="width: 100.0%; height: 100.0%;"><b>Sal</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_701c6952c8bd1469748c05dc6f93fa6f.setContent(html_3aa91910000d6db61a5cbddb0ce7ac9e);
+        
+
+        marker_c1997904d80f2fa95b75834e94519fe7.bindPopup(popup_701c6952c8bd1469748c05dc6f93fa6f)
+        ;
+
+        
+    
+    
+            var marker_5ce8ac9847a6d845dd2f879199d04272 = L.marker(
+                [5.07, -73.87],
+                {}
+            ).addTo(feature_group_fa2271de9a06a60aa527ac85ee6baba0);
+        
+    
+            var icon_7f9d63bec1fcaca6956fcad6ce99fe21 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_5ce8ac9847a6d845dd2f879199d04272.setIcon(icon_7f9d63bec1fcaca6956fcad6ce99fe21);
+        
+    
+        var popup_236d5128d27350f0685d410921b76670 = L.popup({"maxWidth": 250});
+
+        
+            var html_a77d169ac38d0d6e3589f72ef2b83a70 = $(`<div id="html_a77d169ac38d0d6e3589f72ef2b83a70" style="width: 100.0%; height: 100.0%;"><b>Sal</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_236d5128d27350f0685d410921b76670.setContent(html_a77d169ac38d0d6e3589f72ef2b83a70);
+        
+
+        marker_5ce8ac9847a6d845dd2f879199d04272.bindPopup(popup_236d5128d27350f0685d410921b76670)
+        ;
+
+        
+    
+    
+            var feature_group_dba3824c1f80ef715f540fe5f12c8b44 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_cf6016f2da1b255e9da3e680d1996583 = L.marker(
+                [4.7, -74.2],
+                {}
+            ).addTo(feature_group_dba3824c1f80ef715f540fe5f12c8b44);
+        
+    
+            var icon_79f03f0095b52f1599c691d52e02a415 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_cf6016f2da1b255e9da3e680d1996583.setIcon(icon_79f03f0095b52f1599c691d52e02a415);
+        
+    
+        var popup_dc365b2022a602b78bf0b89780d37d74 = L.popup({"maxWidth": 250});
+
+        
+            var html_929c0b0ec908c350249605f1aa33b706 = $(`<div id="html_929c0b0ec908c350249605f1aa33b706" style="width: 100.0%; height: 100.0%;"><b>Flores</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_dc365b2022a602b78bf0b89780d37d74.setContent(html_929c0b0ec908c350249605f1aa33b706);
+        
+
+        marker_cf6016f2da1b255e9da3e680d1996583.bindPopup(popup_dc365b2022a602b78bf0b89780d37d74)
+        ;
+
+        
+    
+    
+            var marker_8b7b4935c125f1a033c2b7b852b937a3 = L.marker(
+                [6.2, -75.6],
+                {}
+            ).addTo(feature_group_dba3824c1f80ef715f540fe5f12c8b44);
+        
+    
+            var icon_8c6f4e1efed8cf8d97c3cb39b0772aa0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_8b7b4935c125f1a033c2b7b852b937a3.setIcon(icon_8c6f4e1efed8cf8d97c3cb39b0772aa0);
+        
+    
+        var popup_00632db4c19a20fc66ffd009204ea08d = L.popup({"maxWidth": 250});
+
+        
+            var html_9a0e1afc6a949e9aeb76180e152b0335 = $(`<div id="html_9a0e1afc6a949e9aeb76180e152b0335" style="width: 100.0%; height: 100.0%;"><b>Flores</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_00632db4c19a20fc66ffd009204ea08d.setContent(html_9a0e1afc6a949e9aeb76180e152b0335);
+        
+
+        marker_8b7b4935c125f1a033c2b7b852b937a3.bindPopup(popup_00632db4c19a20fc66ffd009204ea08d)
+        ;
+
+        
+    
+    
+            var feature_group_7d90a5b7b0ed8fa374543944f312b940 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_eaa5f2f51c2883760654a9012b2ed670 = L.marker(
+                [4.5, -75.7],
+                {}
+            ).addTo(feature_group_7d90a5b7b0ed8fa374543944f312b940);
+        
+    
+            var icon_262b59432e4e6dd290321622f624192d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_eaa5f2f51c2883760654a9012b2ed670.setIcon(icon_262b59432e4e6dd290321622f624192d);
+        
+    
+        var popup_25458660a907a9cd650be0f1f528b0ec = L.popup({"maxWidth": 250});
+
+        
+            var html_ac8ebacd8cf31fb4c23c46576fe351d4 = $(`<div id="html_ac8ebacd8cf31fb4c23c46576fe351d4" style="width: 100.0%; height: 100.0%;"><b>Café</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_25458660a907a9cd650be0f1f528b0ec.setContent(html_ac8ebacd8cf31fb4c23c46576fe351d4);
+        
+
+        marker_eaa5f2f51c2883760654a9012b2ed670.bindPopup(popup_25458660a907a9cd650be0f1f528b0ec)
+        ;
+
+        
+    
+    
+            var feature_group_73a218824d7f22f44a063e0d0f5e0047 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_e348c22ec9331c429a2e7851c55aff7f = L.marker(
+                [3.8, -73.25],
+                {}
+            ).addTo(feature_group_73a218824d7f22f44a063e0d0f5e0047);
+        
+    
+            var icon_5181647a8141e07b08e17fba94042042 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_e348c22ec9331c429a2e7851c55aff7f.setIcon(icon_5181647a8141e07b08e17fba94042042);
+        
+    
+        var popup_f8f93d269482364b9f695c7badba0cd5 = L.popup({"maxWidth": 250});
+
+        
+            var html_31979e9a29cef8f4e88d6d885b94cc1f = $(`<div id="html_31979e9a29cef8f4e88d6d885b94cc1f" style="width: 100.0%; height: 100.0%;"><b>Petróleo crudo</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_f8f93d269482364b9f695c7badba0cd5.setContent(html_31979e9a29cef8f4e88d6d885b94cc1f);
+        
+
+        marker_e348c22ec9331c429a2e7851c55aff7f.bindPopup(popup_f8f93d269482364b9f695c7badba0cd5)
+        ;
+
+        
+    
+    
+            var marker_2e088adb6782784e6f78c89997468986 = L.marker(
+                [5.35, -71.6],
+                {}
+            ).addTo(feature_group_73a218824d7f22f44a063e0d0f5e0047);
+        
+    
+            var icon_b4ca05b06394f805439f957c1b957a40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_2e088adb6782784e6f78c89997468986.setIcon(icon_b4ca05b06394f805439f957c1b957a40);
+        
+    
+        var popup_1c1483805749608008ac4810a02f7617 = L.popup({"maxWidth": 250});
+
+        
+            var html_0b4c569bc6773ca6c20be89ac24abf51 = $(`<div id="html_0b4c569bc6773ca6c20be89ac24abf51" style="width: 100.0%; height: 100.0%;"><b>Petróleo crudo</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_1c1483805749608008ac4810a02f7617.setContent(html_0b4c569bc6773ca6c20be89ac24abf51);
+        
+
+        marker_2e088adb6782784e6f78c89997468986.bindPopup(popup_1c1483805749608008ac4810a02f7617)
+        ;
+
+        
+    
+    
+            var marker_000a8ccb8fa945abc9d728ce5c0c5840 = L.marker(
+                [6.55, -71.0],
+                {}
+            ).addTo(feature_group_73a218824d7f22f44a063e0d0f5e0047);
+        
+    
+            var icon_6f2bd9d5e1ae39bc062abf2e700bb86d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_000a8ccb8fa945abc9d728ce5c0c5840.setIcon(icon_6f2bd9d5e1ae39bc062abf2e700bb86d);
+        
+    
+        var popup_ddcc51368d74f3a944f5028154f94e44 = L.popup({"maxWidth": 250});
+
+        
+            var html_f602bfa541860e406b0814d8702af560 = $(`<div id="html_f602bfa541860e406b0814d8702af560" style="width: 100.0%; height: 100.0%;"><b>Petróleo crudo</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_ddcc51368d74f3a944f5028154f94e44.setContent(html_f602bfa541860e406b0814d8702af560);
+        
+
+        marker_000a8ccb8fa945abc9d728ce5c0c5840.bindPopup(popup_ddcc51368d74f3a944f5028154f94e44)
+        ;
+
+        
+    
+    
+            var marker_a639df8101e0f1bd7a5f5b0b3561c819 = L.marker(
+                [7.1, -73.1],
+                {}
+            ).addTo(feature_group_73a218824d7f22f44a063e0d0f5e0047);
+        
+    
+            var icon_878e2061656563667061387a803e11be = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_a639df8101e0f1bd7a5f5b0b3561c819.setIcon(icon_878e2061656563667061387a803e11be);
+        
+    
+        var popup_c68f9d674dc5643436378803683f2700 = L.popup({"maxWidth": 250});
+
+        
+            var html_71fc1a83362de6941abb9ce7f9888326 = $(`<div id="html_71fc1a83362de6941abb9ce7f9888326" style="width: 100.0%; height: 100.0%;"><b>Petróleo crudo</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_c68f9d674dc5643436378803683f2700.setContent(html_71fc1a83362de6941abb9ce7f9888326);
+        
+
+        marker_a639df8101e0f1bd7a5f5b0b3561c819.bindPopup(popup_c68f9d674dc5643436378803683f2700)
+        ;
+
+        
+    
+    
+            var feature_group_c1b974900e3a4fadaa2f73d307d10537 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_f92a225c63b644272a09369977f2697a = L.marker(
+                [11.2, -72.5],
+                {}
+            ).addTo(feature_group_c1b974900e3a4fadaa2f73d307d10537);
+        
+    
+            var icon_35aa4e63407b3d44d24a03055922f45d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_f92a225c63b644272a09369977f2697a.setIcon(icon_35aa4e63407b3d44d24a03055922f45d);
+        
+    
+        var popup_c8f9a4d08ae8d1d87e9bde2b41449ef0 = L.popup({"maxWidth": 250});
+
+        
+            var html_37f56a4ea9587faf1e7066baf9c268c3 = $(`<div id="html_37f56a4ea9587faf1e7066baf9c268c3" style="width: 100.0%; height: 100.0%;"><b>Carbón</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_c8f9a4d08ae8d1d87e9bde2b41449ef0.setContent(html_37f56a4ea9587faf1e7066baf9c268c3);
+        
+
+        marker_f92a225c63b644272a09369977f2697a.bindPopup(popup_c8f9a4d08ae8d1d87e9bde2b41449ef0)
+        ;
+
+        
+    
+    
+            var marker_24e64fc96154942498252a2f64f23219 = L.marker(
+                [9.9, -73.8],
+                {}
+            ).addTo(feature_group_c1b974900e3a4fadaa2f73d307d10537);
+        
+    
+            var icon_3af7510438bcb762f784c3e5674e5b0c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_24e64fc96154942498252a2f64f23219.setIcon(icon_3af7510438bcb762f784c3e5674e5b0c);
+        
+    
+        var popup_0c75f91d6600f61ce1415934c0b9cc97 = L.popup({"maxWidth": 250});
+
+        
+            var html_9d20ee9a0987b33eb9b4191ea30c8503 = $(`<div id="html_9d20ee9a0987b33eb9b4191ea30c8503" style="width: 100.0%; height: 100.0%;"><b>Carbón</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_0c75f91d6600f61ce1415934c0b9cc97.setContent(html_9d20ee9a0987b33eb9b4191ea30c8503);
+        
+
+        marker_24e64fc96154942498252a2f64f23219.bindPopup(popup_0c75f91d6600f61ce1415934c0b9cc97)
+        ;
+
+        
+    
+    
+            var feature_group_fcb0ad9226d45ae32e7337b6360934a1 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_541023e28b6bbfbc057b643620502118 = L.marker(
+                [7.1, -73.1],
+                {}
+            ).addTo(feature_group_fcb0ad9226d45ae32e7337b6360934a1);
+        
+    
+            var icon_5dce05bd74df7e1efceda1268c38f4cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_541023e28b6bbfbc057b643620502118.setIcon(icon_5dce05bd74df7e1efceda1268c38f4cd);
+        
+    
+        var popup_ea6d311ac3f9e2cf26fa6b651c8087bf = L.popup({"maxWidth": 250});
+
+        
+            var html_0192861e018e670578426f505f324151 = $(`<div id="html_0192861e018e670578426f505f324151" style="width: 100.0%; height: 100.0%;"><b>Plátano</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_ea6d311ac3f9e2cf26fa6b651c8087bf.setContent(html_0192861e018e670578426f505f324151);
+        
+
+        marker_541023e28b6bbfbc057b643620502118.bindPopup(popup_ea6d311ac3f9e2cf26fa6b651c8087bf)
+        ;
+
+        
+    
+    
+            var feature_group_67bbb376421a111b43533df6819c5a78 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_b59086d798083271bb7281547d4a72f6 = L.marker(
+                [6.3, -75.5],
+                {}
+            ).addTo(feature_group_67bbb376421a111b43533df6819c5a78);
+        
+    
+            var icon_71ba418f77ff509b529a30ca9bba0271 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_b59086d798083271bb7281547d4a72f6.setIcon(icon_71ba418f77ff509b529a30ca9bba0271);
+        
+    
+        var popup_7317d1b1fcfba6b1ab3096eac81c5094 = L.popup({"maxWidth": 250});
+
+        
+            var html_a145eda61b7ad93bf4edf08d62e79e97 = $(`<div id="html_a145eda61b7ad93bf4edf08d62e79e97" style="width: 100.0%; height: 100.0%;"><b>Aguacate Hass</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_7317d1b1fcfba6b1ab3096eac81c5094.setContent(html_a145eda61b7ad93bf4edf08d62e79e97);
+        
+
+        marker_b59086d798083271bb7281547d4a72f6.bindPopup(popup_7317d1b1fcfba6b1ab3096eac81c5094)
+        ;
+
+        
+    
+    
+            var feature_group_bae3545e0dec4160a45d24326c9b3ffd = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_d083e42569a94d1e30d231ed6dcc74ef = L.marker(
+                [10.5, -74.2],
+                {}
+            ).addTo(feature_group_bae3545e0dec4160a45d24326c9b3ffd);
+        
+    
+            var icon_d5c50ec332981cfd6bb3282c9a8a3332 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_d083e42569a94d1e30d231ed6dcc74ef.setIcon(icon_d5c50ec332981cfd6bb3282c9a8a3332);
+        
+    
+        var popup_323db4a982898569a44b74daa7f4a9ca = L.popup({"maxWidth": 250});
+
+        
+            var html_3d36f5eda36c7f927cf960aaf0b11952 = $(`<div id="html_3d36f5eda36c7f927cf960aaf0b11952" style="width: 100.0%; height: 100.0%;"><b>Limón Tahití</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_323db4a982898569a44b74daa7f4a9ca.setContent(html_3d36f5eda36c7f927cf960aaf0b11952);
+        
+
+        marker_d083e42569a94d1e30d231ed6dcc74ef.bindPopup(popup_323db4a982898569a44b74daa7f4a9ca)
+        ;
+
+        
+    
+    
+            var feature_group_792bcf6e0bb974df7d69d7b43603ee7c = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_3798f74129f2059cc7fbb12791032de0 = L.marker(
+                [4.7, -74.1],
+                {}
+            ).addTo(feature_group_792bcf6e0bb974df7d69d7b43603ee7c);
+        
+    
+            var icon_6d71ee470c8190e3986806a097a8b035 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_3798f74129f2059cc7fbb12791032de0.setIcon(icon_6d71ee470c8190e3986806a097a8b035);
+        
+    
+        var popup_2889a337e749633f7d17f10144be8df2 = L.popup({"maxWidth": 250});
+
+        
+            var html_ab1b35bd6de3edc1e9c3762738ad893e = $(`<div id="html_ab1b35bd6de3edc1e9c3762738ad893e" style="width: 100.0%; height: 100.0%;"><b>Uchuva</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_2889a337e749633f7d17f10144be8df2.setContent(html_ab1b35bd6de3edc1e9c3762738ad893e);
+        
+
+        marker_3798f74129f2059cc7fbb12791032de0.bindPopup(popup_2889a337e749633f7d17f10144be8df2)
+        ;
+
+        
+    
+    
+            var feature_group_032261c0b354eda3cf0f8ad38ed6130e = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_3b7b3292bea0f68d5cc0b9e18f4ca9fa = L.marker(
+                [5.0, -74.0],
+                {}
+            ).addTo(feature_group_032261c0b354eda3cf0f8ad38ed6130e);
+        
+    
+            var icon_511520c5d7723bae9bf068333603e14c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_3b7b3292bea0f68d5cc0b9e18f4ca9fa.setIcon(icon_511520c5d7723bae9bf068333603e14c);
+        
+    
+        var popup_d3df12e9cb8eb97385a4308d40fe8a2e = L.popup({"maxWidth": 250});
+
+        
+            var html_c21b847215856a971a3388b70ef35a66 = $(`<div id="html_c21b847215856a971a3388b70ef35a66" style="width: 100.0%; height: 100.0%;"><b>Gulupa</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_d3df12e9cb8eb97385a4308d40fe8a2e.setContent(html_c21b847215856a971a3388b70ef35a66);
+        
+
+        marker_3b7b3292bea0f68d5cc0b9e18f4ca9fa.bindPopup(popup_d3df12e9cb8eb97385a4308d40fe8a2e)
+        ;
+
+        
+    
+    
+            var feature_group_5aabd9fcebbd9104200149412fbaeafd = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_1a25334c8a44a6b8c93018e266bfa7f5 = L.marker(
+                [9.3, -75.4],
+                {}
+            ).addTo(feature_group_5aabd9fcebbd9104200149412fbaeafd);
+        
+    
+            var icon_0e9475f696b08dd2fe5977022209e010 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_1a25334c8a44a6b8c93018e266bfa7f5.setIcon(icon_0e9475f696b08dd2fe5977022209e010);
+        
+    
+        var popup_8e78214d2b10afd695cd151ff7e52744 = L.popup({"maxWidth": 250});
+
+        
+            var html_65490e5eb9c8c53f7e2aaf9147055170 = $(`<div id="html_65490e5eb9c8c53f7e2aaf9147055170" style="width: 100.0%; height: 100.0%;"><b>Mango</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_8e78214d2b10afd695cd151ff7e52744.setContent(html_65490e5eb9c8c53f7e2aaf9147055170);
+        
+
+        marker_1a25334c8a44a6b8c93018e266bfa7f5.bindPopup(popup_8e78214d2b10afd695cd151ff7e52744)
+        ;
+
+        
+    
+    
+            var feature_group_37105672e1d56153dae3f50a4ca7e808 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_7064014df8222645704ee6096e778f44 = L.marker(
+                [10.3, -75.5],
+                {}
+            ).addTo(feature_group_37105672e1d56153dae3f50a4ca7e808);
+        
+    
+            var icon_2131b740c31642db3b31f9d4810a4d72 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_7064014df8222645704ee6096e778f44.setIcon(icon_2131b740c31642db3b31f9d4810a4d72);
+        
+    
+        var popup_784b96b7962e9f4117ccb52bc10bd65d = L.popup({"maxWidth": 250});
+
+        
+            var html_746622422391b50a0215a9c61d64915f = $(`<div id="html_746622422391b50a0215a9c61d64915f" style="width: 100.0%; height: 100.0%;"><b>Naranja</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_784b96b7962e9f4117ccb52bc10bd65d.setContent(html_746622422391b50a0215a9c61d64915f);
+        
+
+        marker_7064014df8222645704ee6096e778f44.bindPopup(popup_784b96b7962e9f4117ccb52bc10bd65d)
+        ;
+
+        
+    
+    
+            var feature_group_1601ef6ad92bf0097e9a9cadd540ab26 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_d1a4c1d0e8348d04d1d0e704607bcc92 = L.marker(
+                [6.0, -75.0],
+                {}
+            ).addTo(feature_group_1601ef6ad92bf0097e9a9cadd540ab26);
+        
+    
+            var icon_8bb4c70ed110a37191327896cb6bdffe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_d1a4c1d0e8348d04d1d0e704607bcc92.setIcon(icon_8bb4c70ed110a37191327896cb6bdffe);
+        
+    
+        var popup_6694f50ec36065b68632355e68e8a693 = L.popup({"maxWidth": 250});
+
+        
+            var html_85b1a3c430263ec44df93da83b6154ee = $(`<div id="html_85b1a3c430263ec44df93da83b6154ee" style="width: 100.0%; height: 100.0%;"><b>Maracuyá</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_6694f50ec36065b68632355e68e8a693.setContent(html_85b1a3c430263ec44df93da83b6154ee);
+        
+
+        marker_d1a4c1d0e8348d04d1d0e704607bcc92.bindPopup(popup_6694f50ec36065b68632355e68e8a693)
+        ;
+
+        
+    
+    
+            var feature_group_b014ad05a146815365d0d6fe980d1695 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_38d2fad30fa0c50b5c1cdf44396f923d = L.marker(
+                [5.5, -73.5],
+                {}
+            ).addTo(feature_group_b014ad05a146815365d0d6fe980d1695);
+        
+    
+            var icon_441137995002bce81a68dfd9d61500c4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_38d2fad30fa0c50b5c1cdf44396f923d.setIcon(icon_441137995002bce81a68dfd9d61500c4);
+        
+    
+        var popup_84619f1a06e0f0695dbf19c9fa1e52d9 = L.popup({"maxWidth": 250});
+
+        
+            var html_2f92db1ce267c1146cd5d5d2177816ba = $(`<div id="html_2f92db1ce267c1146cd5d5d2177816ba" style="width: 100.0%; height: 100.0%;"><b>Arándano</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_84619f1a06e0f0695dbf19c9fa1e52d9.setContent(html_2f92db1ce267c1146cd5d5d2177816ba);
+        
+
+        marker_38d2fad30fa0c50b5c1cdf44396f923d.bindPopup(popup_84619f1a06e0f0695dbf19c9fa1e52d9)
+        ;
+
+        
+    
+    
+            var feature_group_f22130c52483da0b373fa8f7792f6e54 = L.featureGroup(
+                {}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+        
+    
+            var marker_0e680eaef36232323ff0785dcab90830 = L.marker(
+                [2.5, -76.6],
+                {}
+            ).addTo(feature_group_f22130c52483da0b373fa8f7792f6e54);
+        
+    
+            var icon_997478ff3d38237db238a60b94a23096 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_0e680eaef36232323ff0785dcab90830.setIcon(icon_997478ff3d38237db238a60b94a23096);
+        
+    
+        var popup_299514720f476f542bfc9ea1b772dcbb = L.popup({"maxWidth": 250});
+
+        
+            var html_f50714fadaec43bb6f807aea5c041b68 = $(`<div id="html_f50714fadaec43bb6f807aea5c041b68" style="width: 100.0%; height: 100.0%;"><b>Tamarillo (Tomate de árbol)</b><br>Ubicación de producción/exportación</div>`)[0];
+            popup_299514720f476f542bfc9ea1b772dcbb.setContent(html_f50714fadaec43bb6f807aea5c041b68);
+        
+
+        marker_0e680eaef36232323ff0785dcab90830.bindPopup(popup_299514720f476f542bfc9ea1b772dcbb)
+        ;
+
+        
+    
+    
+            var layer_control_9d8602abadd3b4b198d6a41631509b13 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_cbf0e2673301def06cf135dd82929522,
+                    "Claro" : tile_layer_69fa452121d9ef7c94c3acbb24e4c154,
+                    "Oscuro" : tile_layer_fa799c49d7f463e250c366e9a9669ea3,
+                },
+                overlays :  {
+                    "Esmeraldas" : feature_group_85677a2497466b32c5f2a8cfbb17cfbe,
+                    "Oro" : feature_group_a68773b7fa79592d75dba244846b96ef,
+                    "Plata" : feature_group_af316446f3de6ecaaf54347449974901,
+                    "Sal" : feature_group_fa2271de9a06a60aa527ac85ee6baba0,
+                    "Flores" : feature_group_dba3824c1f80ef715f540fe5f12c8b44,
+                    "Caf\u00e9" : feature_group_7d90a5b7b0ed8fa374543944f312b940,
+                    "Petr\u00f3leo crudo" : feature_group_73a218824d7f22f44a063e0d0f5e0047,
+                    "Carb\u00f3n" : feature_group_c1b974900e3a4fadaa2f73d307d10537,
+                    "Pl\u00e1tano" : feature_group_fcb0ad9226d45ae32e7337b6360934a1,
+                    "Aguacate Hass" : feature_group_67bbb376421a111b43533df6819c5a78,
+                    "Lim\u00f3n Tahit\u00ed" : feature_group_bae3545e0dec4160a45d24326c9b3ffd,
+                    "Uchuva" : feature_group_792bcf6e0bb974df7d69d7b43603ee7c,
+                    "Gulupa" : feature_group_032261c0b354eda3cf0f8ad38ed6130e,
+                    "Mango" : feature_group_5aabd9fcebbd9104200149412fbaeafd,
+                    "Naranja" : feature_group_37105672e1d56153dae3f50a4ca7e808,
+                    "Maracuy\u00e1" : feature_group_1601ef6ad92bf0097e9a9cadd540ab26,
+                    "Ar\u00e1ndano" : feature_group_b014ad05a146815365d0d6fe980d1695,
+                    "Tamarillo (Tomate de \u00e1rbol)" : feature_group_f22130c52483da0b373fa8f7792f6e54,
+                },
+            };
+            L.control.layers(
+                layer_control_9d8602abadd3b4b198d6a41631509b13.base_layers,
+                layer_control_9d8602abadd3b4b198d6a41631509b13.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+            tile_layer_69fa452121d9ef7c94c3acbb24e4c154.remove();
+            tile_layer_fa799c49d7f463e250c366e9a9669ea3.remove();
+            feature_group_85677a2497466b32c5f2a8cfbb17cfbe.remove();
+            feature_group_a68773b7fa79592d75dba244846b96ef.remove();
+            feature_group_af316446f3de6ecaaf54347449974901.remove();
+            feature_group_fa2271de9a06a60aa527ac85ee6baba0.remove();
+            feature_group_dba3824c1f80ef715f540fe5f12c8b44.remove();
+            feature_group_7d90a5b7b0ed8fa374543944f312b940.remove();
+            feature_group_73a218824d7f22f44a063e0d0f5e0047.remove();
+            feature_group_c1b974900e3a4fadaa2f73d307d10537.remove();
+            feature_group_fcb0ad9226d45ae32e7337b6360934a1.remove();
+            feature_group_67bbb376421a111b43533df6819c5a78.remove();
+            feature_group_bae3545e0dec4160a45d24326c9b3ffd.remove();
+            feature_group_792bcf6e0bb974df7d69d7b43603ee7c.remove();
+            feature_group_032261c0b354eda3cf0f8ad38ed6130e.remove();
+            feature_group_5aabd9fcebbd9104200149412fbaeafd.remove();
+            feature_group_37105672e1d56153dae3f50a4ca7e808.remove();
+            feature_group_1601ef6ad92bf0097e9a9cadd540ab26.remove();
+            feature_group_b014ad05a146815365d0d6fe980d1695.remove();
+            feature_group_f22130c52483da0b373fa8f7792f6e54.remove();
+        
+</script>
+</html>
