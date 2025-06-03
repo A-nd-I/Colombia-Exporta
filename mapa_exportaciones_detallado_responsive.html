@@ -783,9 +783,32 @@
         marker_38d2fad30fa0c50b5c1cdf44396f923d.bindPopup(popup_84619f1a06e0f0695dbf19c9fa1e52d9)
         ;
 
-        
-    
-    
+        // Crear grupo de capas para "Cocaína"
+var feature_group_cocaina = L.featureGroup({}).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
+
+// Coordenadas aproximadas de las regiones
+var ubicaciones_cocaina = [
+    { nombre: "Catatumbo", coords: [8.0, -73.0] },
+    { nombre: "Putumayo", coords: [0.5, -76.5] },
+    { nombre: "Cauca", coords: [2.7, -76.8] },
+    { nombre: "Nariño", coords: [1.5, -77.0] }
+];
+
+// Icono personalizado
+var icono_cocaina = L.AwesomeMarkers.icon({
+    icon: 'leaf',
+    markerColor: 'darkred',
+    prefix: 'fa',
+    iconColor: 'white'
+});
+
+// Añadir marcadores al grupo
+ubicaciones_cocaina.forEach(function(ubicacion) {
+    var marcador = L.marker(ubicacion.coords, { icon: icono_cocaina })
+        .bindPopup("<b>Cocaína</b><br>Producción en " + ubicacion.nombre);
+    feature_group_cocaina.addLayer(marcador);
+});
+
             var feature_group_f22130c52483da0b373fa8f7792f6e54 = L.featureGroup(
                 {}
             ).addTo(map_47ea62995ea47704b9fcebf9cc549c3e);
@@ -841,6 +864,8 @@
                     "Maracuy\u00e1" : feature_group_1601ef6ad92bf0097e9a9cadd540ab26,
                     "Ar\u00e1ndano" : feature_group_b014ad05a146815365d0d6fe980d1695,
                     "Tamarillo (Tomate de \u00e1rbol)" : feature_group_f22130c52483da0b373fa8f7792f6e54,
+                    "Cocaína": feature_group_cocaina,
+
                 },
             };
             L.control.layers(
